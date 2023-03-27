@@ -5,6 +5,10 @@ import { Signup } from './Components/Signup/Signup.js';
 import { Login } from './Components/Login/Login.js';
 import { LERegistration } from './Components/LearningEventRegistration/LERegistration.js'
 import { LeExisting } from './Components/LearningEventExisting/LeExisting.js'
+import { CERegistration } from './Components/CodingEventRegistration/CERegistration.js'
+import { CeExisting } from './Components/CodingEventExisting/CeExisting.js'
+import { IPERegistration } from './Components/InterviewPreparationRegistration/IPERegistration.js'
+import { IpeExisting } from './Components/InterviewPreparationEventExisting/IpeExisting.js'
 import { Contactus } from './Components/ContactUs/contactus.js'
 import { Review } from './Components/Review/Review.js';
 import AppBar from '@mui/material/AppBar';
@@ -20,11 +24,11 @@ import FormControl from '@mui/material/FormControl';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-
-
+import { LearningEvent } from './Components/LearningEvent/LearningEvent';
+import { CodingEvent } from './Components/CodingEvent/CodingEvent';
+import { InterviewPreparationEvent } from './Components/InterviewPreparationEvent/InterviewPreparationEvent';
 
 
 
@@ -52,8 +56,8 @@ function Home() {
           size="medium"
         >
           <MenuItem value="Learning_Event" onClick={()=>navigate("/LearningEvent")}>Learning Event</MenuItem>
-          <MenuItem value="Coding Event" onClick={()=>navigate("/registration")}>Coding Event</MenuItem>
-          <MenuItem value="Interview preparation Event" onClick={()=>navigate("/registration")}>Interview preparation Event</MenuItem>
+          <MenuItem value="Coding Event" onClick={()=>navigate("/CodingEvent")}>Coding Event</MenuItem>
+          <MenuItem value="Interview preparation Event" onClick={()=>navigate("/InterviewPreparationEvent")}>Interview preparation Event</MenuItem>
         </Select>
         </FormControl>
         </Box>
@@ -62,29 +66,47 @@ function Home() {
 }
 
 
-export function LearningEvent() {
-
-  const navigate = useNavigate();
-  const [Event, setEvent] = React.useState('');
-
-  const handleChange = (event) => {
-    setEvent(event.target.value);
-  };
-
+export function ExistingLearingEvents({user}) {
   return(
-    <div className="LearningEvent-Container">
-      <ButtonGroup variant="contained" aria-label="outlined primary button group" size="large" 
-        onChange={handleChange} 
-        value={Event}>
-        <Button  onClick={()=>navigate("/LeRegistration")}>Create Event</Button>
-        <Button onClick={()=>navigate("/LeExisting")}>Registered Users</Button>
-      </ButtonGroup>
+    <div className="cards-container">
+      <Card className ="user-container">
+        <CardContent className ="user-specs">
+          <h3 className ="user-name">Name: {user.name}</h3>
+          <p  className="user-gender">Gender: {user.gender}</p>
+          <p> Age: {user.age}</p>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            Qualification:{user.qualification}
+          </Typography>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            Email:{user.email}
+          </Typography>
+        </CardContent>
+      </Card> 
     </div>
   )
 }
 
+export function ExistingCodingEvents({user}) {
+  return(
+    <div className="cards-container">
+      <Card className ="user-container">
+        <CardContent className ="user-specs">
+          <h3 className ="user-name">Name: {user.name}</h3>
+          <p  className="user-gender">Gender: {user.gender}</p>
+          <p> Age: {user.age}</p>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            Qualification:{user.qualification}
+          </Typography>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            Email:{user.email}
+          </Typography>
+        </CardContent>
+      </Card> 
+    </div>
+  )
+}
 
-export function ExistingLearingEvents({user}) {
+export function ExistingInterviewPreparationEvents({user}) {
   return(
     <div className="cards-container">
       <Card className ="user-container">
@@ -154,7 +176,12 @@ function App() {
           <Route path = "/LearningEvent" element = {<LearningEvent />}></Route>
           <Route path = "/LeRegistration" element = {<LERegistration />}></Route>
           <Route path = "/LeExisting" element = {<LeExisting />}></Route>
-          {/* <Route path = "/Registration/users" element = {<Registerprofile />}></Route> */}
+          <Route path = "/CodingEvent" element = {<CodingEvent />}></Route>
+          <Route path = "/CeRegistration" element = {<CERegistration />}></Route>
+          <Route path = "/CeExisting" element = {<CeExisting />}></Route>
+          <Route path = "/InterviewPreparationEvent" element = {<InterviewPreparationEvent />}></Route>
+          <Route path = "/IpeRegistration" element = {<IPERegistration />}></Route>
+          <Route path = "/IpeExisting" element = {<IpeExisting />}></Route>
           <Route path = "/Contactus" element = {<Contactus />}></Route>
           <Route path = "/Review" element = {<Review />}></Route>
         </Routes>

@@ -134,9 +134,13 @@ h1{
   justify-content: center;
 }
 .LearningEvent-Container{
+  position: absolute;
+  top: 40%;
+  left: 35%;
   display: flex;
-  margin: 20px 20px;
-  justify-content: left;
+  flex-wrap: wrap;
+  /* margin: 20px 20px; */
+  /* justify-content: left; */
 }
 .cards-container{
   display: flex;
@@ -155,4 +159,35 @@ h1{
   justify-content: space-around;
   margin: 20px 0;
 }
-
+.CodingEvent-Container{
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 20px 20px; */
+  /* justify-content: left; */
+}
+.CeExisting-container{
+  display:flex;
+  flex-wrap: wrap;
+  gap:1rem;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.InterviewPreparationEvent-Container{
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 20px 20px; */
+  /* justify-content: left; */
+}
+.IpeExisting-container{
+  display:flex;
+  flex-wrap: wrap;
+  gap:1rem;
+  justify-content: space-around;
+  margin: 20px 0;
+}
