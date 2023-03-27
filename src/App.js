@@ -1,6 +1,6 @@
 import './App.css';
 import * as React from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import {  Routes , Route, useNavigate } from 'react-router-dom';
 import { Signup } from './Components/Signup/Signup.js';
 import { Login } from './Components/Login/Login.js';
 import { LERegistration } from './Components/LearningEventRegistration/LERegistration.js'
