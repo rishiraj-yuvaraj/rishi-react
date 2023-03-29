@@ -1,4 +1,4 @@
-# Getting Started with Capstone front end project code
+# Capstone front end project code
 
 This is my Capstone React code project, I used several components while creating this project.
 
