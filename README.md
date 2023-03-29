@@ -31,5 +31,5 @@ This Web App will be helpfull for the students management, who wants to register
 
 ### Deployment
 
-I Deployed my project in Netlify.
+I Deployed my project in Netlify (https://soft-boba-9c2d3a.netlify.app), you can gothrough my Web App.
 
