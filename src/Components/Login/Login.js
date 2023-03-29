@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import {API} from '../../globalApi';
 
 
 export function Login() {
@@ -15,7 +15,7 @@ export function Login() {
   const handleSubmit = async(event) => {
       event.preventDefault();
       try{
-        const response = await axios.post("http://localhost:4000/login", {email, password});
+        const response = await axios.post(`${API}/login`, {email, password});
         navigate("/Home");
         console.log(response)
       }catch(error){

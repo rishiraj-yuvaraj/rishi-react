@@ -1,11 +1,11 @@
 import { ExistingInterviewPreparationEvents } from '../../App'
 import { useState, useEffect } from 'react';
-
+import { API } from '../../globalApi';
 
 export function IpeExisting() {
     const [userList, setUserList] = useState([]);
     const getUsers = () => {
-        fetch('http://localhost:4000/IpeExisting', {method: "GET"})
+        fetch(`${API}/IpeExisting`, {method: "GET"})
         .then((data) => data.json())
         .then((urs) => setUserList(urs));
     }

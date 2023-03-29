@@ -1,11 +1,12 @@
 import { ExistingLearingEvents } from '../../App'
 import { useState, useEffect } from 'react';
+import { API } from '../../globalApi';
 
 
 export function LeExisting() {
     const [userList, setUserList] = useState([]);
     const getUsers = () => {
-        fetch('http://localhost:4000/LeExisting', {method: "GET"})
+        fetch(`${API}/LeExisting`, {method: "GET"})
         .then((data) => data.json())
         .then((urs) => setUserList(urs));
     }

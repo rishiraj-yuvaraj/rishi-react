@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-
+import {API} from '../../globalApi';
 
 export function CERegistration() {
 //   const formValidationSchema = yup.object({
@@ -35,7 +35,7 @@ const formik = useFormik({
   const addUser = (newUser) =>{
     console.log(newUser)
     
-    fetch("http://localhost:4000/ceregistration", {method: "POST",
+    fetch(`${API}/ceregistration`, {method: "POST",
     body : JSON.stringify(newUser),
     headers: {
       "Content-Type": "application/json",
